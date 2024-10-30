@@ -21,3 +21,8 @@
     height: 5px;
     background: var(--gradient-color);
 }
+
+.navActive {
+    color: var(--main-color);
+    font-weight: 800;
+}
