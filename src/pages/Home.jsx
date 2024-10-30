@@ -1,6 +1,12 @@
+import Navbar from "../components/navbar/Navbar"
+
 function Home() {
   return (
-    <div>Home</div>
+    <>
+    <Navbar/>
+    <h1>Estela Julia</h1>
+    </>
+    
   )
 }
 
