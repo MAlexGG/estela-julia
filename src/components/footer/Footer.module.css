@@ -1,0 +1,13 @@
+.ctFooter {
+    background: var(--gradient-color);
+    width: 100%;
+    height: 70px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctFooter img {
+    padding: 0 10px;
+}
