@@ -1,0 +1,14 @@
+.ctNotFound {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.separator {
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-color);
+}
