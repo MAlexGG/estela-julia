@@ -1,0 +1,6 @@
+.ctButton {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    border-radius: 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}

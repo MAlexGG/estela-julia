@@ -1,0 +1,45 @@
+{
+    "tours": [{
+            "id": 1,
+            "date": "Viernes 25 Octubre 2024",
+            "place": "Pamplona, Zentral (Sexteto)",
+            "link": "http://"
+        },
+        {
+            "id": 2,
+            "date": "Sábado 16 Noviembre 2024",
+            "place": "BCN Sons de ciutat (Quartet) - a las 12am",
+            "link": "http://"
+        },
+        {
+            "id": 3,
+            "date": "Domingo 17 Noviembre 2024",
+            "place": "Librería Byron BCN (Quartet) - a las 19h",
+            "link": "http://"
+        },
+        {
+            "id": 4,
+            "date": "Jueves 12 Diciembre 2024",
+            "place": "BCN Sons de Ciutat (Quartet) - a las 18h",
+            "link": "http://"
+        },
+        {
+            "id": 5,
+            "date": "Sábado 18 Enero 2025",
+            "place": "Urtarrijazz - Civivox San Jorge (Quartet)",
+            "link": "http://"
+        },
+        {
+            "id": 6,
+            "date": "Martes 21 Enero 2025",
+            "place": "Festival de Jazz de Vitoria (SEXTETO + masterclass)",
+            "link": "http://"
+        },
+        {
+            "id": 7,
+            "date": "Sábado 8 Marzo 2025",
+            "place": "BCN Sons de ciutat (Quartet) - a las 12h",
+            "link": "http://"
+        }
+    ]
+}
