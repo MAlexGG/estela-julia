@@ -7,7 +7,7 @@ function Navbar() {
     <header className={styles.ctHeader}>
         <nav className={styles.ctNavbar}>
             <NavLink to={"/"} className={({isActive}) => isActive ? styles.navActive : ""}>INICIO</NavLink>
-            <a href="#discografia">DISCOGRAFÍA</a>
+            <NavLink to={"#discografia"}>DISCOGRAFÍA</NavLink>
             <NavLink to={"/videos"} className={({isActive}) => isActive ? styles.navActive : ""}>VIDEOS</NavLink>
             <NavLink to={"/tours-events"} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
             <a href="http://" target="_blank" rel="noopener noreferrer">TIENDA</a>

@@ -4,6 +4,7 @@ function Videos() {
   return (
     <>
     <Navbar/>
+    <h2>VIDEOS</h2>
     </>
   )
 }

@@ -4,8 +4,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     position: sticky;
+    top: 0;
+    background-color: var(--light-color);
 }
 
 .ctNavbar {

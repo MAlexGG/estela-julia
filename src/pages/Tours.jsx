@@ -4,6 +4,7 @@ function Tours() {
   return (
     <>
     <Navbar/>
+    <h2>GIRAS Y EVENTOS</h2>
     </>
   )
 }

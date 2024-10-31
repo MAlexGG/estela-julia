@@ -17,6 +17,7 @@
     --light-color: #FEF3FF;
     --dark-color: #1C0511;
     --gradient-color: linear-gradient(90deg, rgba(248, 38, 9, 1) 0%, rgba(28, 5, 17, 1) 42%, rgba(56, 6, 81, 1) 60%, rgba(6, 148, 41, 1) 100%);
+    --font-subtitle: 30px;
 }
 
 * {
@@ -52,6 +53,12 @@ body {
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+}
+
+h2 {
+    color: var(--main-color);
+    font-size: var(--font-subtitle);
+    padding: 50px;
 }
 
 button {
