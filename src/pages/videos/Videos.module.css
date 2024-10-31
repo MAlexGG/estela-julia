@@ -26,3 +26,10 @@
     height: 5px;
     background: var(--gradient-color);
 }
+
+@media (max-width: 430px) {
+    .ctVideo iframe {
+        width: 350px;
+        height: 200px;
+    }
+}
