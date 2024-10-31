@@ -23,6 +23,7 @@ function Tours() {
         )).reverse()
       }
     </div>
+    <div className={styles.separator}></div>
     </>
   )
 }

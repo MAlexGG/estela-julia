@@ -76,7 +76,7 @@ button {
 }
 
 button:hover {
-    border-color: #646cff;
+    background-color: var(--dark-color);
 }
 
 button:focus,

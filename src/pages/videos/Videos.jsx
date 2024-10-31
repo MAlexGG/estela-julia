@@ -1,7 +1,6 @@
 import Navbar from "../../components/navbar/Navbar"
 import styles from './Videos.module.css'
 import videos from '../../assets/data/videos.json'
-import Footer from '../../components/footer/Footer'
 import { useEffect, useState } from "react";
 
 function Videos() {
@@ -26,7 +25,7 @@ function Videos() {
       ))
     }
     </div>
-    <Footer/>
+    <div className={styles.separator}></div>
     </>
   )
 }
