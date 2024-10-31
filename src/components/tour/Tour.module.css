@@ -20,3 +20,18 @@ h3 {
     font-size: var(--font-subtitle);
     font-weight: 200;
 }
+
+@media (max-width: 768px) {
+    .ctTour {
+        width: 100%;
+        height: 150px;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .btLink {
+        left: 10px;
+    }
+    h3 {
+        font-size: var(--font-subtitle-mobile);
+    }
+}
