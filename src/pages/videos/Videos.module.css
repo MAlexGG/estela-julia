@@ -1,0 +1,21 @@
+.ctVideos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ctVideo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.ctVideo iframe {
+    width: 500px;
+    height: 300px;
+    padding-bottom: 10px;
+}

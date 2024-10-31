@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import App from '../App'
-import Videos from '../pages/Videos'
 import Tours from "../pages/Tours"
 import NotFound from '../pages/NotFound'
+import Videos from "../pages/videos/Videos"
 
 function Router() {
   return (
