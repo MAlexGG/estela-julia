@@ -36,3 +36,25 @@
 .ctDisc img {
     width: 50%;
 }
+
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    .ctHome {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .txtStart {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ctDisc {
+        flex-direction: column;
+    }
+    .ctDisc img {
+        width: 80%;
+    }
+}
