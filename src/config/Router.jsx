@@ -3,11 +3,14 @@ import App from '../App'
 import Videos from "../pages/videos/Videos"
 import Tours from "../pages/tours/Tours"
 import NotFound from "../pages/notFound/NotFound"
-import Dashboard from "../pages/dashboard/Dashboard"
+import AdminVideos from "../pages/dashboard/admin_videos/AdminVideos"
+import AdminTours from "../pages/dashboard/admin_tours/AdminTours"
+
 
 function Router() {
   
-  const url = import.meta.env.VITE_ADMIN_URL;
+  const videos_url = import.meta.env.VITE_ADMIN_URL;
+  const tours_url = import.meta.env.VITE_ADMIN_URL_TOURS;
   
   return (
     <BrowserRouter>
@@ -16,7 +19,8 @@ function Router() {
             <Route path="/videos" element={<Videos/>} />
             <Route path="/tours-events" element={<Tours/>} />
             <Route path="*" element={<NotFound/>} />
-            <Route path={`/${url}`} element={<Dashboard/>}/>
+            <Route path={`/${videos_url}`} element={<AdminVideos/>}/>
+            <Route path={`/${tours_url}`} element={<AdminTours/>}/>
         </Routes>
     </BrowserRouter>
   )
