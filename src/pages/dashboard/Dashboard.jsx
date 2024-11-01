@@ -1,7 +1,10 @@
+import Navbar from "../../components/dashboard/navbar/Navbar"
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <>
+      <Navbar/>
+    </>
   )
 }
 

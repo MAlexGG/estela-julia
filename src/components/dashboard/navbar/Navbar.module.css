@@ -1,0 +1,58 @@
+.ctHeader {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--light-color);
+}
+
+.ctLogo {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 10rem;
+}
+
+.ctNavbar {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.separator {
+    width: 80%;
+    height: 5px;
+    background: var(--gradient-color);
+}
+
+.navActive {
+    color: var(--main-color);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+@media (max-width: 992px) {
+    .ctLogo {
+        flex-direction: column;
+    }
+    .ctNavbar {
+        width: 100%;
+    }
+    .ctHeader {
+        padding-top: 20px;
+    }
+    .logo {
+        width: 7rem;
+    }
+}
