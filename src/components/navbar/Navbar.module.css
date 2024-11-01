@@ -1,4 +1,5 @@
-.ctHeader {
+.ctHeader,
+.ctHeaderClose {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,8 @@
     display: none;
 }
 
-.ctNavbar {
+.ctNavbar,
+.ctNavbarClose {
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -41,7 +43,6 @@
         padding-top: 0;
         background: var(--gradientLight-color);
         justify-content: flex-end;
-        position: relative;
     }
     .ctNavbar {
         width: 100%;
@@ -65,5 +66,16 @@
         right: 15px;
         background: none;
         padding: 0;
+    }
+    .ctHeaderClose {
+        width: 100vw;
+        height: 10vh;
+        padding-top: 0;
+        background: var(--gradientLight-color);
+        justify-content: flex-end;
+    }
+    .ctNavbarClose,
+    .separatorClose {
+        display: none;
     }
 }
