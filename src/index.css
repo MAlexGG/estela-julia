@@ -17,7 +17,7 @@
     --light-color: #FEF3FF;
     --dark-color: #1C0511;
     --gradient-color: linear-gradient(90deg, rgba(248, 38, 9, 1) 0%, rgba(28, 5, 17, 1) 42%, rgba(56, 6, 81, 1) 60%, rgba(6, 148, 41, 1) 100%);
-    --gradientTransparent-color: linear-gradient(90deg, rgba(248, 38, 9, 0.2) 0%, rgba(28, 5, 17, 0.2) 42%, rgba(56, 6, 81, 0.2) 60%, rgba(6, 148, 41, 0.2) 100%);
+    --gradientLight-color: linear-gradient(90deg, rgba(253, 202, 206, 1) 0%, rgba(209, 195, 207, 1) 39%, rgba(229, 201, 228, 1) 64%, rgba(204, 224, 212, 1) 100%);
     --font-subtitle: 30px;
     --font-subtitle-mobile: 20px;
     --filter-svg: invert(17%) sepia(38%) saturate(3973%) hue-rotate(284deg) brightness(96%) contrast(92%);

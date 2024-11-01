@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import styles from './Navbar.module.css'
+import menu from '../../assets/images/menu.svg'
 
 function Navbar() {
 
@@ -7,6 +8,9 @@ function Navbar() {
 
   return (
     <header className={styles.ctHeader}>
+      <button className={styles.btMenu}>
+        <img src={menu} alt="hamburguer menu" className={styles.imgMenu} />
+      </button>
         <nav className={styles.ctNavbar}>
             <NavLink to={"/"} className={({isActive}) => isActive ? styles.navActive : ""}>INICIO</NavLink>
             <a href="/#discografia">DISCOGRAFÍA</a>

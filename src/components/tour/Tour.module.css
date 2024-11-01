@@ -1,7 +1,7 @@
 .ctTour {
     width: 100%;
     height: 120px;
-    background: var(--gradientTransparent-color);
+    background: var(--gradientLight-color);
     position: relative;
     margin: 20px 0;
     display: flex;

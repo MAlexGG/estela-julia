@@ -51,10 +51,19 @@
 }
 
 @media (max-width: 768px) {
+    .ctHome,
+    .txtBio {
+        width: 90vw;
+    }
     .ctDisc {
         flex-direction: column;
+        width: 100vw;
     }
     .ctDisc img {
-        width: 80%;
+        width: 100%;
+    }
+    .txtStart,
+    .txtBio {
+        font-size: 16px;
     }
 }
