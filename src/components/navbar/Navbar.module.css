@@ -67,6 +67,9 @@
         background: none;
         padding: 0;
     }
+    .btMenu:hover {
+        background-color: transparent;
+    }
     .ctHeaderClose {
         width: 100vw;
         height: 10vh;
