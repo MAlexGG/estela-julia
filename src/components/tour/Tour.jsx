@@ -7,7 +7,7 @@ function Tour({tour}) {
         <h3>{tour.date}</h3>
         <p>{tour.place}</p>
         <div className={styles.btLink}>
-            <Button link={tour.link}/>
+            <Button link={tour.link} text="Saber más..."/>
         </div>
     </div>
   )
