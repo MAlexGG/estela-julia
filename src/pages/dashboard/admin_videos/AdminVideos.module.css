@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 40px;
 }
 
 .ctVideos {
@@ -30,7 +31,6 @@
 @media (max-width: 768px) {
     .ctAdContent {
         flex-direction: column-reverse;
-        margin-bottom: 40px;
     }
     .ctVideos {
         gap: 10px;

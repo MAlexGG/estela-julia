@@ -5,6 +5,7 @@ import Tours from "../pages/tours/Tours"
 import NotFound from "../pages/notFound/NotFound"
 import AdminVideos from "../pages/dashboard/admin_videos/AdminVideos"
 import AdminTours from "../pages/dashboard/admin_tours/AdminTours"
+import Login from "../pages/dashboard/login/Login"
 
 
 function Router() {
@@ -19,8 +20,9 @@ function Router() {
             <Route path="/videos" element={<Videos/>} />
             <Route path="/tours-events" element={<Tours/>} />
             <Route path="*" element={<NotFound/>} />
-            <Route path={`/${videos_url}`} element={<AdminVideos/>}/>
-            <Route path={`/${tours_url}`} element={<AdminTours/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path={`login/${videos_url}`} element={<AdminVideos/>}/>
+            <Route path={`login/${tours_url}`} element={<AdminTours/>}/>
         </Routes>
     </BrowserRouter>
   )

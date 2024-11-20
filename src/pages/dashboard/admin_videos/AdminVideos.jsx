@@ -5,14 +5,25 @@ import videos from '../../../assets/data/videos.json'
 import { useEffect, useState } from "react"
 import FormButton from "../../../components/button/FormButton"
 import Input from "../../../components/input/Input"
+import Cookies from 'js-cookie'
+import { useNavigate } from "react-router"
+
 
 function AdminVideos() {
 
   const [data, setData] = useState([]);
+  const user_admin = import.meta.env.VITE_ADMIN_USER;
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setData(videos.videos)
-  }, [data])
+    if(Cookies.get('user') === user_admin){
+      setData(videos.videos);
+    } else {
+      navigate("/login");
+    }
+  }, [data, user_admin, navigate])
+
+  console.log(Cookies.get('user'))
 
   return (
     <div className={styles.ctAdVideos}>
