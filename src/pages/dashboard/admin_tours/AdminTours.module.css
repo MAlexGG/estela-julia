@@ -1,0 +1,45 @@
+.ctAdVideos,
+.ctVideos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ctAdContent {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.ctVideos {
+    gap: 10px;
+    width: 45vw;
+}
+
+.ctForm {
+    width: 35%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    .ctAdContent {
+        flex-direction: column-reverse;
+    }
+    .ctVideos {
+        gap: 10px;
+        width: 80vw;
+    }
+
+    .ctForm{
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+}

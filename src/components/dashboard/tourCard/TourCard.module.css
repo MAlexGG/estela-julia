@@ -1,0 +1,27 @@
+.ctTourCard {
+    width: 100%;
+    height: auto;
+    background: var(--gradientLight-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.ctData{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btDelete {
+    background-color: var(--main-color);
+    border-radius: 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

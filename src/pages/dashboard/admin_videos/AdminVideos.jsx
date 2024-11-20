@@ -23,8 +23,6 @@ function AdminVideos() {
     }
   }, [data, user_admin, navigate])
 
-  console.log(Cookies.get('user'))
-
   return (
     <div className={styles.ctAdVideos}>
         <Navbar/>
