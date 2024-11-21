@@ -22,7 +22,7 @@ function Navbar() {
             <NavLink to={"/"} className={({isActive}) => isActive ? styles.navActive : ""}>INICIO</NavLink>
             <a href="/#discografia"  onClick={handleClick}>DISCOGRAFÍA</a>
             <NavLink to={"/videos"} className={({isActive}) => isActive ? styles.navActive : ""}>VIDEOS</NavLink>
-            <NavLink to={"/tours-events"} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
+            <NavLink to={"/giras-eventos"} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
             <a href="http://" target="_blank" rel="noopener noreferrer">TIENDA</a>
             <a href={`mailto:${contactEmail}`}>CONTACTO</a>
         </nav>

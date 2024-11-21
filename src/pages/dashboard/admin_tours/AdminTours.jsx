@@ -7,6 +7,7 @@ import styles from './AdminTours.module.css'
 import Input from "../../../components/input/Input";
 import FormButton from "../../../components/button/FormButton";
 import TourCard from "../../../components/dashboard/tourCard/TourCard";
+import SortedToursDate from "../../../utils/SortedToursDate";
 
 function AdminTours() {
   const [data, setData] = useState([]);
@@ -14,12 +15,12 @@ function AdminTours() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(Cookies.get('user') === user_admin){
-      setData(tours.tours);
+    if (Cookies.get('user') === user_admin) {
+      setData(SortedToursDate(tours.tours));
     } else {
       navigate("/login");
     }
-  }, [data, user_admin, navigate])
+  }, [user_admin, navigate]);
 
   return (
     <div className={styles.ctAdVideos}>

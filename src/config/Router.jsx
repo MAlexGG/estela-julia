@@ -18,11 +18,11 @@ function Router() {
         <Routes>
             <Route path="/" element={<App/>} />
             <Route path="/videos" element={<Videos/>} />
-            <Route path="/tours-events" element={<Tours/>} />
+            <Route path="/giras-eventos" element={<Tours/>} />
             <Route path="*" element={<NotFound/>} />
-            <Route path="/login" element={<Login/>}/>
-            <Route path={`login/${videos_url}`} element={<AdminVideos/>}/>
-            <Route path={`login/${tours_url}`} element={<AdminTours/>}/>
+            <Route path="/quiensoy" element={<Login/>}/>
+            <Route path={`quiensoy/${videos_url}`} element={<AdminVideos/>}/>
+            <Route path={`quiensoy/${tours_url}`} element={<AdminTours/>}/>
         </Routes>
     </BrowserRouter>
   )

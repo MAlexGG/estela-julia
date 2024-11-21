@@ -3,13 +3,14 @@ import Navbar from "../../components/navbar/Navbar"
 import Tour from "../../components/tour/Tour"
 import styles from './Tours.module.css'
 import tours from '../../assets/data/tours.json'
+import SortedToursDate from "../../utils/SortedToursDate"
 
 function Tours() {
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(tours.tours)  
+    setData(SortedToursDate(tours.tours));
   }, [data])
 
   return (
@@ -20,7 +21,7 @@ function Tours() {
       {
         data.map((tour, index) => (
           <Tour key={index} tour={tour}/>
-        )).reverse()
+        ))
       }
     </div>
     <div className={styles.separator}></div>

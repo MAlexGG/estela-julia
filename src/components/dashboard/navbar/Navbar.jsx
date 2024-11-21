@@ -12,7 +12,7 @@ function Navbar() {
 
   const handleLogout = () => {
     Cookies.remove('user');
-    navigate("/login");
+    navigate("/quiensoy");
   }
 
   return (
@@ -20,8 +20,8 @@ function Navbar() {
         <div className={styles.ctLogo}>
             <img src={logo} alt="Estela Julia" className={styles.logo}/>
             <nav className={styles.ctNavbar}>
-                <NavLink to={`/login/${videos_url}`} className={({isActive}) => isActive ? styles.navActive : ""}>VIDEOS</NavLink>
-                <NavLink to={`/login/${tours_url}`} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
+                <NavLink to={`/quiensoy/${videos_url}`} className={({isActive}) => isActive ? styles.navActive : ""}>VIDEOS</NavLink>
+                <NavLink to={`/quiensoy/${tours_url}`} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
                 <button className={styles.btLogout}><img src={logout} alt="logout icon" onClick={handleLogout}/></button>
             </nav>
         </div>
