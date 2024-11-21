@@ -19,7 +19,7 @@ function AdminVideos() {
     if(Cookies.get('user') === user_admin){
       setData(videos.videos);
     } else {
-      navigate("/login");
+      navigate("/quiensoy");
     }
   }, [data, user_admin, navigate])
 

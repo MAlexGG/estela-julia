@@ -1,43 +1,43 @@
 {
     "tours": [{
             "id": 1,
-            "date": "25 october 2024",
+            "date": "2024-10-25",
             "place": "Pamplona, Zentral (Sexteto)",
             "link": "https://www.zentralpamplona.com/es/agenda/ciclo-kuxkuxean-estela-julia"
         },
         {
             "id": 2,
-            "date": "16 november 2024",
+            "date": "2024-11-16",
             "place": "BCN Sons de ciutat (Quartet) - a las 12am",
             "link": "http://"
         },
         {
             "id": 3,
-            "date": "17 november 2024",
+            "date": "2024-11-17",
             "place": "Librería Byron BCN (Quartet) - a las 19h",
             "link": "https://www.eventbrite.es/e/estela-julia-quartet-tickets-1026130322417?aff=oddtdtcreator"
         },
         {
             "id": 4,
-            "date": "12 december 2024",
+            "date": "2024-12-12",
             "place": "BCN Sons de Ciutat (Quartet) - a las 18h",
             "link": "http://"
         },
         {
             "id": 5,
-            "date": "18 january 2025",
+            "date": "2025-01-18",
             "place": "Urtarrijazz - Civivox San Jorge (Quartet)",
             "link": "http://"
         },
         {
             "id": 6,
-            "date": "21 january 2025",
+            "date": "2025-01-21",
             "place": "Festival de Jazz de Vitoria (SEXTETO + masterclass)",
             "link": "http://"
         },
         {
             "id": 7,
-            "date": "08 march 2025",
+            "date": "2025-03-08",
             "place": "BCN Sons de ciutat (Quartet) - a las 12h",
             "link": "http://"
         }

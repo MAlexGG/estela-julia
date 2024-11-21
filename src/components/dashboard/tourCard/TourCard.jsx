@@ -1,19 +1,19 @@
 import styles from './TourCard.module.css'
+import Tour from '../../tour/Tour'
 import deleteIcon from '../../../assets/images/delete.svg'
-import DateFormater from '../../../utils/DateFormater'
 
 function TourCard({tour}) {
 
-  return (
-    <div className={styles.ctTourCard}>
-        <div className={styles.ctData}>
-            <p>{DateFormater(tour.date)}</p>
-            <p>{tour.place}</p>
-            <p>{tour.link}</p>
+    const handle = (id) => {
+        console.log(id)
+    }
+
+    return (
+        <div className={styles.ctTourCard}>
+            <Tour tour={tour}/>
+            <button className={styles.btDelete} onClick={() => handle(tour.id)}><img src={deleteIcon} alt="delete button" /></button>
         </div>
-        <button className={styles.btDelete}><img src={deleteIcon} alt="delete button" /></button>
-    </div>
-  )
+      )
 }
 
 export default TourCard

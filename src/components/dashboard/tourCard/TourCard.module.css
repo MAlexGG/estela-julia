@@ -1,18 +1,6 @@
-.ctTourCard {
+.ctTourCard{
     width: 100%;
-    height: auto;
-    background: var(--gradientLight-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px;
-}
-
-.ctData{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    position: relative;
 }
 
 .btDelete {
@@ -24,4 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: -15px;
 }
