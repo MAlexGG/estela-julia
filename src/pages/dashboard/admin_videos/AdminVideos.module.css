@@ -1,5 +1,4 @@
-.ctAdVideos,
-.ctVideos {
+.ctAdVideos {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -15,7 +14,10 @@
 }
 
 .ctVideos {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
     width: 45vw;
 }
 
@@ -28,15 +30,21 @@
     align-items: flex-end;
 }
 
+
+@media (max-width: 1279px) {
+    .ctVideos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 @media (max-width: 768px) {
     .ctAdContent {
         flex-direction: column-reverse;
     }
     .ctVideos {
-        gap: 10px;
         width: 80vw;
     }
-
     .ctForm{
         width: 100%;
         align-items: flex-start;

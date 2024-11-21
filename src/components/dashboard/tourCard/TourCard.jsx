@@ -10,7 +10,7 @@ function TourCard({tour}) {
 
     return (
         <div className={styles.ctTourCard}>
-            <Tour tour={tour}/>
+            <Tour tour={tour} classTour='ctTour'/>
             <button className={styles.btDelete} onClick={() => handle(tour.id)}><img src={deleteIcon} alt="delete button" /></button>
         </div>
       )
