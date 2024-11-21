@@ -9,3 +9,16 @@
     height: 5px;
     background: var(--gradient-color);
 }
+
+.txtSubtitle{
+    color: var(--main-color);
+    font-weight: 400;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .txtSubtitle{
+        font-size: var(--font-subtitle);
+    }
+    
+}
