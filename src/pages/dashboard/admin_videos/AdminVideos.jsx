@@ -1,27 +1,50 @@
 import Navbar from "../../../components/dashboard/navbar/Navbar"
 import VideoCard from "../../../components/dashboard/videoCard/VideoCard"
 import styles from './AdminVideos.module.css'
-import videos from '../../../assets/data/videos.json'
 import { useEffect, useState } from "react"
 import FormButton from "../../../components/button/FormButton"
 import Input from "../../../components/input/Input"
 import Cookies from 'js-cookie'
 import { useNavigate } from "react-router"
+import { apiVideos } from "../../../services/apiVideos"
 
+const initialForm = {
+  src: '',
+  description: ''
+};
 
 function AdminVideos() {
 
   const [data, setData] = useState([]);
+  const [form, setForm] = useState(initialForm);
   const user_admin = import.meta.env.VITE_ADMIN_USER;
   const navigate = useNavigate();
+  const api = apiVideos();
 
   useEffect(() => {
     if(Cookies.get('user') === user_admin){
-      setData(videos.videos);
+      api.getVideos().then(res => {
+        setData(res.data)
+      }).catch(error => console.log(error));
     } else {
       navigate("/quiensoy");
     }
-  }, [data, user_admin, navigate])
+  }, []);
+
+  const handleChange = (e) => {
+    setForm({
+        ...form,
+        [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    api.createVideos(form).then(res => {
+      setData([...data, res.data])
+    })
+    e.target.reset();
+};
 
   return (
     <div className={styles.ctAdVideos}>
@@ -35,9 +58,9 @@ function AdminVideos() {
               ))
             }
           </div>
-          <form className={styles.ctForm}>
-            <Input label="title" labelName="Título" placeholder="Escribe un título..."/>
-            <Input label="url" labelName="URL Vídeo" placeholder="Escribe una url..."/>
+          <form className={styles.ctForm} onSubmit={handleSubmit}>
+            <Input label="description" labelName="Título" placeholder="Escribe un título..." onChange={handleChange}/>
+            <Input label="src" labelName="URL Vídeo" placeholder="Escribe una url..." onChange={handleChange}/>
             <FormButton text="Crear Video"/>
           </form>
         </div>
