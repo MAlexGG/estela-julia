@@ -4,11 +4,14 @@ import Tour from "../../components/tour/Tour"
 import styles from './Tours.module.css'
 import SortedToursDate from "../../utils/SortedToursDate"
 import { apiTours } from '../../services/apiTours'
+import Message from "../../components/message/Message"
 
 function Tours() {
 
   const [futureTours, setFutureTours] = useState([]);
   const [pastTours, setPastTours] = useState([]);
+  const [msg, setMsg] = useState('');
+  const [msgOpen, setOpen] = useState(false);
   const api = apiTours();
 
   useEffect(() => {
@@ -20,12 +23,19 @@ function Tours() {
       setFutureTours(future);
       setPastTours(past);
     }).catch(error => {
-      console.log(error);
+      setMsg(error.message);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
     });
   }, [])
 
   return (
     <>
+    {
+      msgOpen && <Message message={msg} state={msgOpen ? 'open' : 'close'}/>
+    }
     <Navbar/>
     <h2>GIRAS Y EVENTOS</h2>
     <div className={styles.ctTours}>

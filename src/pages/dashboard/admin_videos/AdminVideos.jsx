@@ -102,7 +102,7 @@ const handleDelete = (id) => {
           </div>
           <form className={styles.ctForm} onSubmit={handleSubmit}>
             <Input label="description" labelName="Título" placeholder="Escribe un título..." onChange={handleChange}/>
-            <Input label="src" labelName="URL Vídeo" placeholder="Escribe una url..." onChange={handleChange}/>
+            <Input label="src" labelName="ID del Vídeo" placeholder="Escribe el id del vídeo..." onChange={handleChange}/>
             <FormButton text="Crear Video"/>
           </form>
         </div>
