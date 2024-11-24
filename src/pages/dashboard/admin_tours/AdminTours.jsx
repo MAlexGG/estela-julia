@@ -67,6 +67,25 @@ function AdminTours() {
     e.target.reset();
 };
 
+const handleDelete = (id) => {
+  if(id){
+    api.deleteTours(id).then(res => {
+      setMsg(`El evento del día ${res.data.date} ha sido eliminado con éxito`);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
+      setData(data.filter(tour => tour.id !== id));
+    }).catch(error => {
+      setMsg(error.message);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
+    })
+  };
+};
+
   return (
     <div className={styles.ctAdVideos}>
         {
@@ -78,7 +97,7 @@ function AdminTours() {
           <div className={styles.ctVideos}>
             {
               data.map((tour, index) => (
-                <TourCard key={index} tour={tour}/>
+                <TourCard key={index} tour={tour} handleDelete={handleDelete}/>
               )).reverse()
             }
           </div>
