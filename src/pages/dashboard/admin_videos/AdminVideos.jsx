@@ -25,7 +25,7 @@ function AdminVideos() {
     if(Cookies.get('user') === user_admin){
       api.getVideos().then(res => {
         setData(res.data)
-      }).catch(error => console.log(error));
+      }).catch(error => console.log(error));//CAMBIAR A MENSAJE
     } else {
       navigate("/quiensoy");
     }

@@ -1,15 +1,18 @@
 import Navbar from "../../components/navbar/Navbar"
 import styles from './Videos.module.css'
-import videos from '../../assets/data/videos.json'
 import Video from '../../components/video/Video'
 import { useEffect, useState } from "react";
+import { apiVideos } from "../../services/apiVideos";
 
 function Videos() {
 
   const [data, setData] = useState([]);
+  const api = apiVideos();
 
   useEffect(() => {
-    setData(videos.videos)
+    api.getVideos().then(res => {
+      setData(res.data);
+    }).catch(error => console.log(error));
   }, [data])
 
   return (
