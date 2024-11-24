@@ -7,6 +7,7 @@ import Input from "../../../components/input/Input"
 import Cookies from 'js-cookie'
 import { useNavigate } from "react-router"
 import { apiVideos } from "../../../services/apiVideos"
+import Message from "../../../components/message/Message"
 
 const initialForm = {
   src: '',
@@ -17,6 +18,8 @@ function AdminVideos() {
 
   const [data, setData] = useState([]);
   const [form, setForm] = useState(initialForm);
+  const [msg, setMsg] = useState('');
+  const [msgOpen, setOpen] = useState(false);
   const user_admin = import.meta.env.VITE_ADMIN_USER;
   const navigate = useNavigate();
   const api = apiVideos();
@@ -42,6 +45,11 @@ function AdminVideos() {
     e.preventDefault();
     api.createVideos(form).then(res => {
       setData([...data, res.data])
+      setMsg(`¡${res.data.description} creado con éxito!`);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
     })
     e.target.reset();
 };
@@ -49,7 +57,11 @@ function AdminVideos() {
 const handleDelete = (id) => {
   if(id){
     api.deleteVideos(id).then(res => {
-      console.log(`${res.data.description} eliminado con éxito`);
+      setMsg(`¡${res.data.description} eliminado con éxito!`);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
       setData(data.filter(video => video.id !== id));
     }).catch(error => {
       console.log(error);
@@ -59,6 +71,9 @@ const handleDelete = (id) => {
 
   return (
     <div className={styles.ctAdVideos}>
+        {
+          msgOpen && <Message message={msg} state={msgOpen ? 'open' : 'close'}/>
+        }
         <Navbar/>
         <h2>VIDEOS</h2>
         <div className={styles.ctAdContent}>

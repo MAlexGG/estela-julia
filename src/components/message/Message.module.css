@@ -1,0 +1,25 @@
+.ctMessage{
+    width: 100vw;
+    height: 70px;
+    background: var(--gradientLight-color);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close{
+    display: none;
+}
+
+.ctMessage p{
+    color: var(--main-color);
+    font-weight: 400;
+    text-align: center;
+}
