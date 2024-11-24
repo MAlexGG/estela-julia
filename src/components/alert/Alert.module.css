@@ -1,0 +1,26 @@
+.open{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    z-index: 2;
+}
+
+.close{
+    display: none;
+}
+
+.ctButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
