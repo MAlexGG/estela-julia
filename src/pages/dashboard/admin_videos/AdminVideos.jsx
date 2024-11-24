@@ -46,6 +46,17 @@ function AdminVideos() {
     e.target.reset();
 };
 
+const handleDelete = (id) => {
+  if(id){
+    api.deleteVideos(id).then(res => {
+      console.log(`${res.data.description} eliminado con éxito`);
+      setData(data.filter(video => video.id !== id));
+    }).catch(error => {
+      console.log(error);
+    })
+  };
+}
+
   return (
     <div className={styles.ctAdVideos}>
         <Navbar/>
@@ -54,7 +65,7 @@ function AdminVideos() {
           <div className={styles.ctVideos}>
             {
               data.map((video, index) => (
-                <VideoCard key={index} video={video}/>
+                <VideoCard key={index} video={video} handleDelete={handleDelete}/>
               ))
             }
           </div>
