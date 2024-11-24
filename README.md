@@ -1,4 +1,4 @@
-# :microphone:  Estela Julia
+:microphone:  Estela Julia
 ============
 
 ## Table of Contents
