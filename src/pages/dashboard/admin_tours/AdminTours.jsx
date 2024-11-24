@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import Navbar from "../../../components/dashboard/navbar/Navbar"
 import { useNavigate } from "react-router";
 import Cookies from 'js-cookie'
-import tours from '../../../assets/data/tours.json'
 import styles from './AdminTours.module.css'
 import Input from "../../../components/input/Input";
 import FormButton from "../../../components/button/FormButton";
 import TourCard from "../../../components/dashboard/tourCard/TourCard"
 import SortedToursDate from "../../../utils/SortedToursDate";
+import { apiTours } from '../../../services/apiTours'
+import Message from "../../../components/message/Message";
 
 const initialForm = {
   date: '',
@@ -17,13 +18,24 @@ const initialForm = {
 
 function AdminTours() {
   const [data, setData] = useState([]);
-  const [form, setForm] = useState(initialForm)
+  const [form, setForm] = useState(initialForm);
+  const [msg, setMsg] = useState('');
+  const [msgOpen, setOpen] = useState(false);
   const user_admin = import.meta.env.VITE_ADMIN_USER;
   const navigate = useNavigate();
+  const api = apiTours();
 
   useEffect(() => {
     if (Cookies.get('user') === user_admin) {
-      setData(SortedToursDate(tours.tours));
+      api.getTours().then(res => {
+        setData(SortedToursDate(res.data))
+      }).catch(error => {
+        setMsg(error.message);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
+      })
     } else {
       navigate("/quiensoy");
     }
@@ -38,13 +50,28 @@ function AdminTours() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form)
-    console.log('Creado correctamente')
+    api.createTours(form).then(res => {
+      setData([...data, res.data])
+      setMsg(`El evento del día ${res.data.date} se ha creado con éxito`);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
+    }).catch(error => {
+      setMsg(error.message);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
+    })
     e.target.reset();
 };
 
   return (
     <div className={styles.ctAdVideos}>
+        {
+          msgOpen && <Message message={msg} state={msgOpen ? 'open' : 'close'}/>
+        }
         <Navbar/>
         <h2>GIRAS Y EVENTOS</h2>
         <div className={styles.ctAdContent}>
@@ -52,7 +79,7 @@ function AdminTours() {
             {
               data.map((tour, index) => (
                 <TourCard key={index} tour={tour}/>
-              ))
+              )).reverse()
             }
           </div>
           <form className={styles.ctForm} onSubmit={handleSubmit}>

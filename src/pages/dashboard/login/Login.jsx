@@ -18,6 +18,8 @@ function Login() {
     const pass_admin = import.meta.env.VITE_ADMIN_PASS;
     const videos_url = import.meta.env.VITE_ADMIN_URL;
 
+    const cookiesOptions = {sameSite: 'None', secure: true};
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -29,9 +31,10 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        Cookies.set('remote_sid', 'user', cookiesOptions);
         if (form.user === user_admin && form.pass === pass_admin) {
             setError('');
-            Cookies.set('user', form.user)
+            Cookies.set('user', form.user, cookiesOptions);
             navigate(videos_url)
         } else {
             setError('Credenciales incorrectas');

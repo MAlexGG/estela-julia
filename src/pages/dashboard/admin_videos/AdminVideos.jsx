@@ -28,7 +28,13 @@ function AdminVideos() {
     if(Cookies.get('user') === user_admin){
       api.getVideos().then(res => {
         setData(res.data)
-      }).catch(error => console.log(error));//CAMBIAR A MENSAJE
+      }).catch(error => {
+        setMsg(error.message);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
+      });
     } else {
       navigate("/quiensoy");
     }
@@ -50,6 +56,12 @@ function AdminVideos() {
       setTimeout(() => {
         setOpen(false);
       }, 2000);
+    }).catch(error => {
+      setMsg(error.message);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
     })
     e.target.reset();
 };
@@ -64,7 +76,11 @@ const handleDelete = (id) => {
       }, 2000);
       setData(data.filter(video => video.id !== id));
     }).catch(error => {
-      console.log(error);
+      setMsg(error.message);
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 2000);
     })
   };
 }

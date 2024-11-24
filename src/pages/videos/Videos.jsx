@@ -3,20 +3,33 @@ import styles from './Videos.module.css'
 import Video from '../../components/video/Video'
 import { useEffect, useState } from "react";
 import { apiVideos } from "../../services/apiVideos";
+import Message from "../../components/message/Message";
 
 function Videos() {
 
   const [data, setData] = useState([]);
+  const [msg, setMsg] = useState('');
+  const [msgOpen, setOpen] = useState(false);
+  
   const api = apiVideos();
 
   useEffect(() => {
     api.getVideos().then(res => {
       setData(res.data);
-    }).catch(error => console.log(error));
-  }, [data])
+    }).catch(error => {
+      setMsg(error.message);
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 2000);
+    });
+  }, [])
 
   return (
     <>
+    {
+      msgOpen && <Message message={msg} state={msgOpen ? 'open' : 'close'}/>
+    }
     <Navbar/>
     <h2>VIDEOS</h2>
     <div className={styles.ctVideos}>
