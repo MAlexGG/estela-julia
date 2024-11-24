@@ -28,5 +28,3 @@ function TourCard({tour, handleDelete}) {
 }
 
 export default TourCard
-
-/* onClick={()=>handleDelete(tour.id)} */

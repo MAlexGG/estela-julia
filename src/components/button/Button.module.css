@@ -17,3 +17,11 @@
     border: 1px solid var(--main-color);
     color: var(--main-color);
 }
+
+.main:hover, .secondary:hover {
+    border: 1px solid var(--light-color);
+}
+
+.secondary:hover {
+    color: var(--light-color);
+}
