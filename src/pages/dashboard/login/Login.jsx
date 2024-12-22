@@ -22,20 +22,32 @@ function Login() {
 
     const navigate = useNavigate();
 
+    const validInputRegex = /^[a-zA-Z0-9_@.-]+$/;
+
     const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (!validInputRegex.test(value)) {
+            setError('El campo contiene caracteres no permitidos.');
+        } else {
+            setError('');
+        };
         setForm({
             ...form,
-            [e.target.name]: e.target.value
+            [name]: value
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!validInputRegex.test(form.user) || !validInputRegex.test(form.pass)) {
+            setError('El formulario contiene caracteres no válidos.');
+            return;
+        };
         Cookies.set('remote_sid', 'user', cookiesOptions);
         if (form.user === user_admin && form.pass === pass_admin) {
             setError('');
             Cookies.set('user', form.user, cookiesOptions);
-            navigate(videos_url)
+            navigate(videos_url);
         } else {
             setError('Credenciales incorrectas');
         };

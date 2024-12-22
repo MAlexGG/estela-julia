@@ -23,7 +23,7 @@ function Navbar() {
             <a href="/#discografia"  onClick={handleClick}>DISCOGRAFÍA</a>
             <NavLink to={"/videos"} className={({isActive}) => isActive ? styles.navActive : ""}>VIDEOS</NavLink>
             <NavLink to={"/giras-eventos"} className={({isActive}) => isActive ? styles.navActive : ""}>GIRAS Y EVENTOS</NavLink>
-            <a href="http://" target="_blank" rel="noopener noreferrer">TIENDA</a>
+            <a href="https://www.etsy.com/es/shop/EstelaJulia?ref=seller-platform-mcnav" target="_blank" rel="noopener noreferrer">TIENDA</a>
             <a href={`mailto:${contactEmail}`}>CONTACTO</a>
         </nav>
         <div className={styles.separator}></div>
